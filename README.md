@@ -1,1 +1,3 @@
-# games
+# Games 🎮
+
+### Dice game 🎲

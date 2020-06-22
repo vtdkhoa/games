@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice game</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/dice-icon.png"/>
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Content -->
+  <div class="wrapper clearfix">
+    <!-- Player 1 -->
+    <div class="player-0-panel active">
+      <div class="player-0-name" id="name-0">Player 1</div>
+      <div class="player-0-total-score" id="score-0"></div>
+      <div class="player-0-score-box">
+        <div class="player-score-label">Current score</div>
+        <div class="player-current-score" id="current-score-0"></div>
+      </div>
+    </div>
+    <!-- Player 2 -->
+    <div class="player-1-panel">
+      <div class="player-1-name" id="name-1">Player 2</div>
+      <div class="player-1-total-score" id="score-1"></div>
+      <div class="player-1-score-box">
+        <div class="player-score-label">Current score</div>
+        <div class="player-current-score" id="current-score-1"></div>
+      </div>
+    </div>
+    <button class="btn-new-game">
+      <i class="ion-plus"></i>New game
+    </button>
+    <button class="btn-roll">
+      <i class="ion-loop"></i>Roll dice
+    </button>
+    <button class="btn-hold">
+      <i class="ion-ios-download-outline"></i>Hold the score
+    </button>
+    <img src="images/dice-1.png" alt="Dice" class="dice">
+  </div>
+  <!-- /end -->
+  <script src="app.js"></script>
+</body>
+</html>
