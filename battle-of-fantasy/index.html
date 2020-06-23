@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle of Fantasy</title>
+  <link rel="shortcut icon" href="images/battle-icon.png" type="image/x-icon">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <noscript>
+    If you're seeing this message, that means
+    <strong>JavaScript has been disabled on your browser</strong>, please
+    <strong>enable JavaScript</strong> to make this app work. Thanks !
+  </noscript>
+  <button class="btn">Open Modal</button>
+  <!-- Modal -->
+  <div id="modal-heroes" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header" id="mh-player-0">
+        <h2>Player 1 - Choose hero</h2>
+      </div>
+      <div class="modal-body" id="mb-player-0">
+        <div class="heroes">
+          <button class="btn-left" id="left-0">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <img src="images/heroes/gladiator/gladiator.png" alt="gladiator">
+          <button class="btn-right" id="right-0">
+            <i class="fas fa-angle-right"></i>
+          </button>
+          <div class="btn-img-select">
+            <button class="btn-select" id="bl-player-0">Select</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-header" id="mh-player-1">
+        <h2>Player 2 - Choose hero</h2>
+      </div>
+      <div class="modal-body" id="mb-player-1">
+        <div class="heroes">
+          <button class="btn-left" id="left-1">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <img src="images/heroes/gladiator/gladiator.png" alt="gladiator">
+          <button class="btn-right" id="right-1">
+            <i class="fas fa-angle-right"></i>
+          </button>
+          <div class="btn-img-select">
+            <button class="btn-select" id="bl-player-1">Select</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="fontawesome/js/all.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
