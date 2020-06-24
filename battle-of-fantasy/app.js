@@ -1,3 +1,6 @@
+let activePlayer, p1Health, p2Health,
+  isPlaying, p1selectedHero, p2selectedHero
+
 let heroes = [
   { id: 1, name: "gladiator", image: "images/heroes/gladiator/gladiator.png", item: "images/heroes/gladiator/spear.png" },
   { id: 2, name: "knight", image: "images/heroes/knight/knight.png", item: "images/heroes/knight/sword-shield.png" },
@@ -8,6 +11,38 @@ let heroes = [
   { id: 7, name: "werewolf", image: "images/heroes/werewolf/werewolf.png", item: "images/heroes/werewolf/claws.png" },
   { id: 8, name: "witch", image: "images/heroes/witch/witch.png", item: "images/heroes/witch/witch-wand.png" }
 ]
+
+initTheGame()
+
+// Todo: Handle roll the dice
+document.querySelector('.btn-roll').addEventListener('click', () => {
+  if (isPlaying) {
+    // Random dice form 1 to 6
+    let dice = Math.floor(Math.random() * 6) + 1
+    console.log(dice)
+
+    // Display the dice
+    let diceImg = document.querySelector('.dice')
+    diceImg.style.display = 'block'
+    diceImg.src = `images/dice/dice-${dice}.png`
+
+    if (activePlayer === 0) {
+      if (dice % 2 === 0) {
+        // Do something...
+      } else {
+        // Do something...
+      }
+    }
+
+    if (activePlayer === 1) {
+      if (dice % 2 === 0) {
+        // Do something...
+      } else {
+        // Do something...
+      }
+    }
+  }
+})
 
 // Todo: Scroll hero to the left
 function scrollToLeft() {
@@ -20,17 +55,63 @@ function scrollToRight() {
 }
 
 // Todo: Handle select hero for player 1
-function selectHeroPlayer1() {
+document.querySelector('#bl-player-0').addEventListener('click', () => {
+  if (!p1selectedHero) {
+    document.getElementById('player-0-selected').textContent = 'selected'
+    document.getElementById('bl-player-0').textContent = 'reselect'
+    p1selectedHero = true
+  } else {
+    document.getElementById('player-0-selected').textContent = ''
+    document.getElementById('bl-player-0').textContent = 'select'
+    p1selectedHero = false
+  }
+})
+
+// Todo: Handle select hero for player 2
+document.querySelector('#bl-player-1').addEventListener('click', () => {
+  if (!p2selectedHero) {
+    document.getElementById('player-1-selected').textContent = 'selected'
+    document.getElementById('bl-player-1').textContent = 'reselect'
+    p2selectedHero = true
+  } else {
+    document.getElementById('player-1-selected').textContent = ''
+    document.getElementById('bl-player-1').textContent = 'select'
+    p2selectedHero = false
+  }
+})
+
+// Todo: Handle attack action
+function attack() {
   // Do something...
 }
 
-// Todo: Handle select hero for player 2
-function selectHeroPlayer2() {
+// Todo: Handle heal action
+function heal() {
   // Do something...
+}
+
+// Todo: Start the game
+function initTheGame() {
+  activePlayer = 0
+  isPlaying = true
+  p1Health = 100
+  p2Health = 100
+  p1selectedHero = false
+  p2selectedHero = false
+
+  document.getElementById('modal-heroes').style.display = 'block'
+  document.querySelector('.dice').style.display = 'none'
+
+  document.getElementById('current-health-0').textContent = '100'
+  document.getElementById('current-health-1').textContent = '100'
 }
 
 function closeModal() {
   document.getElementById('modal-heroes').style.display = 'none'
+}
+
+function switchPlayer() {
+  activePlayer === 0 ? activePlayer = 1 : activePlayer = 0
 }
 
 // Test
@@ -39,8 +120,3 @@ window.onclick = event => {
     closeModal()
   }
 }
-
-// Test
-document.querySelector('.btn').addEventListener('click', () => {
-  document.getElementById('modal-heroes').style.display = 'block'
-})
