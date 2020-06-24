@@ -19,7 +19,6 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
   if (isPlaying) {
     // Random dice form 1 to 6
     let dice = Math.floor(Math.random() * 6) + 1
-    console.log(dice)
 
     // Display the dice
     let diceImg = document.querySelector('.dice')
