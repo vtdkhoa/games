@@ -55,27 +55,27 @@ function scrollToRight() {
 
 // Todo: Handle select hero for player 1
 document.querySelector('#bl-player-0').addEventListener('click', () => {
-  if (!p1selectedHero) {
-    document.getElementById('player-0-selected').textContent = 'selected'
-    document.getElementById('bl-player-0').textContent = 'reselect'
-    p1selectedHero = true
-  } else {
+  if (p1selectedHero) {
     document.getElementById('player-0-selected').textContent = ''
     document.getElementById('bl-player-0').textContent = 'select'
     p1selectedHero = false
+  } else {
+    document.getElementById('player-0-selected').textContent = 'selected'
+    document.getElementById('bl-player-0').textContent = 'reselect'
+    p1selectedHero = true
   }
 })
 
 // Todo: Handle select hero for player 2
 document.querySelector('#bl-player-1').addEventListener('click', () => {
-  if (!p2selectedHero) {
-    document.getElementById('player-1-selected').textContent = 'selected'
-    document.getElementById('bl-player-1').textContent = 'reselect'
-    p2selectedHero = true
-  } else {
+  if (p2selectedHero) {
     document.getElementById('player-1-selected').textContent = ''
     document.getElementById('bl-player-1').textContent = 'select'
     p2selectedHero = false
+  } else {
+    document.getElementById('player-1-selected').textContent = 'selected'
+    document.getElementById('bl-player-1').textContent = 'reselect'
+    p2selectedHero = true
   }
 })
 
