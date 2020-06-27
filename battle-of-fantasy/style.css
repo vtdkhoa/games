@@ -62,13 +62,13 @@ body {
 }
 
 .active .player-0-name {
-  border: 5px solid #eb4d4d;
-  padding: -10px 5px;
+  color: #eb4d4d;
+  text-decoration: underline;
 }
 
 .active .player-1-name {
-  border: 5px solid #2686c2;
-  padding: -10px 5px;
+  color: #2686c2;
+  text-decoration: underline;
 }
 
 .active .player-0-name::after { color: #eb4d4d; }
@@ -339,4 +339,15 @@ button[disabled] {
   font-weight: 300;
   margin: 5px;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1366px) {
+  .player-0-panel,
+  .player-1-panel {
+    height: 620px;
+  }
+
+  .modal-content {
+    margin-top: -85px;
+  }
 }
