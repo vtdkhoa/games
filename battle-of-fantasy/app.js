@@ -14,6 +14,10 @@ let heroes = [
 
 initTheGame()
 
+/**
+ * Handle events area
+ */
+
 // Todo: Handle roll the dice
 document.querySelector('.btn-roll').addEventListener('click', () => {
   if (isPlaying) {
@@ -43,16 +47,6 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
   }
 })
 
-// Todo: Scroll hero to the left
-function scrollToLeft() {
-  // Do Something...
-}
-
-// Todo: Scroll hero to the right
-function scrollToRight() {
-  // Do something...
-}
-
 // Todo: Handle select hero for player 1
 document.querySelector('#bl-player-0').addEventListener('click', () => {
   if (p1selectedHero) {
@@ -78,6 +72,14 @@ document.querySelector('#bl-player-1').addEventListener('click', () => {
     p2selectedHero = true
   }
 })
+
+document.querySelector('.btn-new-game').addEventListener('click', () => {
+  initTheGame()
+})
+
+/**
+ * Declare functions area
+ */
 
 // Todo: Handle attack action
 function attack() {
@@ -105,12 +107,30 @@ function initTheGame() {
   document.getElementById('current-health-1').textContent = '100'
 }
 
+// Todo: Scroll hero to the left
+function scrollToLeft() {
+  // Do Something...
+}
+
+// Todo: Scroll hero to the right
+function scrollToRight() {
+  // Do something...
+}
+
 function closeModal() {
   document.getElementById('modal-heroes').style.display = 'none'
 }
 
+function openModal() {
+  document.getElementById('modal-heroes').style.display = 'block'
+}
+
 function switchPlayer() {
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0
+}
+
+if (p1selectedHero && p2selectedHero) {
+  closeModal()
 }
 
 // Test
